@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block body %}
     {% for cat in categories %}
-        <p>{{ cat.title }}</p>
+        <p><a href="{% url 'post-list' cat.slug %}" >{{ cat.title }}</a></p>
     {% endfor %}
-</body>
-</html>
+{% endblock body %}
