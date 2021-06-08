@@ -38,7 +38,7 @@ class User(AbstractBaseUser):
         return  f'{self.email}'
 
 
-    def create_activvation_code(self):
+    def create_activation_code(self):
         from  django.utils.crypto import  get_random_string
         code = get_random_string(8, '0123456789')
         self.activation_code = code
@@ -47,7 +47,7 @@ class User(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return self.is_staff
 
-    def has_perm(self,perm, obj=None):
+    def has_perm(self, perm, obj=None):
         return self.is_staff
 
 
