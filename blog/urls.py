@@ -20,10 +20,9 @@ from django.urls import path, include
 from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.IndexPageView.as_view(), name='index-page'),
+    path('', include('main.urls')),
     path('accounts/', include('account.urls')),
-    path('posts/<slug:category>/', views.PostListView.as_view(), name='post-list'),
-    path('posts/details/<int:pk>/', views.PostDetailsView.as_view(), name='post-details')
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

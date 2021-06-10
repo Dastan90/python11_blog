@@ -5,12 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Смена паролья</h1>
+    <h1>Создание нового поста</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-    <button type="submit">Сменить пароль</button>
-
+        <button type="submit">создать</button>
     </form>
 </body>
 </html>
